@@ -1,9 +1,19 @@
 package com.DSI.PPAI.Entities;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.beans.ConstructorProperties;
+import java.util.List;
+
 
 import lombok.Data;
 import java.time.LocalDateTime;
 
-
+@Getter
+@Setter
+@AllArgsConstructor
 @Data
 public class NovedadEvento {
     private int codigoDescuentoPremium;
