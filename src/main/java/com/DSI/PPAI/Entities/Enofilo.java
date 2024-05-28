@@ -13,19 +13,31 @@ public class Enofilo {
     private List<Siguiendo> seguido;
     private Usuario usuario;
 
-    public Void mostrarAmigosSeguidos(){
-        return null;
-    }
-    public Void mostrarColeccionFavoritos(){
-        return null;
+    public Enofilo() {}
+
+    public Enofilo(String apellido, String nombre, String imagenPerfil, List<Vino> vino, List<Siguiendo> seguido, Usuario usuario) {
+        this.apellido = apellido;
+        this.nombre = nombre;
+        this.imagenPerfil = imagenPerfil;
+        this.vino = vino;
+        this.seguido = seguido;
+        this.usuario = usuario;
     }
 
-    public Boolean seguisABodega(Bodega bodega){
+    public boolean seguirABodega(Bodega bodega){
         for (Siguiendo siguiendo : seguido) {
             if(siguiendo.getBodega() == bodega){
                 return true;
             }
         }
         return false;
+    }
+
+    public void mostrarAmigosSeguidos() {
+        // Implementar lógica
+    }
+
+    public void mostrarColeccionFavoritos() {
+        // Implementar lógica
     }
 }

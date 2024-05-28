@@ -6,4 +6,8 @@ import lombok.Data;
 public class Maridaje {
     private String nombre;
     private String descripcion;
+
+    public String toString() {
+        return "Maridaje" + nombre + "\n" + descripcion;
+    }
 }

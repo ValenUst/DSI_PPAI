@@ -7,6 +7,8 @@ import lombok.Setter;
 
 import java.util.List;
 
+@Setter
+@Getter
 @Data
 public class Vino {
     private Integer añada;
@@ -32,5 +34,9 @@ public class Vino {
 
     public Void esDeRegionVitivinicola(){
         return null;
+    }
+
+    public String toString() {
+        return "Vino: " + nombre + "de " + bodega + "año " + añada;
     }
 }

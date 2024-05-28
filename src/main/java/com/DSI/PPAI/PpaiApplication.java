@@ -1,31 +1,24 @@
 package com.DSI.PPAI;
 
 import com.DSI.PPAI.Entities.Bodega;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.DSI.PPAI.Services.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-@SpringBootApplication
 public class PpaiApplication {
+    public static void main(String[] args) {
+        // Crear algunos objetos de ejemplo
+        Bodega bodega1 = new Bodega(new ArrayList<>(), "Descripcion 1", "Bodega Los Andes", 2, true, LocalDate.now().minusMonths(3));
+        Bodega bodega2 = new Bodega(new ArrayList<>(), "Descripcion 2", "Bodega El Sol", 4, true, LocalDate.now().minusMonths(5));
 
-	public static void main(String[] args) {
-		SpringApplication.run(PpaiApplication.class, args);
-	}
+        List<Bodega> bodegas = List.of(bodega1, bodega2);
 
-	List<String> bodegasAActualizar = new ArrayList<>(Arrays.asList("str_1","str_2"));
+        BodegaService bodegaService = new BodegaService(bodegas);
+        BodegaAPI bodegaAPI = new BodegaAPIImpl();
+        GestorImportadorBodegas gestorImportadorBodegas = new GestorImportadorBodegas(bodegaService, bodegaAPI);
 
-	Gestor gestor = new Gestor();
-
-	List<Integer> coordenadas = Arrays.asList(3,8);
-
-	Bodega bodega2 = new Bodega(coordenadas,"desc2","nombre2",1,false);
-	Bodega bodega1 = new Bodega(coordenadas,"desc1","nombre1",2,true);
-
-	Bodega[] bodegas = {bodega1};
-
-
-
+        gestorImportadorBodegas.importarActualizacionesDeBodegas();
+    }
 }

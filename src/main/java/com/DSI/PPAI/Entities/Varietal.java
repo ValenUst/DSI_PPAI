@@ -9,4 +9,8 @@ public class Varietal {
     private Float porcentajeComposicion;
     private TipoUva tipoUva;
 
+    public String toString() {
+        return descripcion + " " + porcentajeComposicion + " " + tipoUva.toString();
+    }
+
 }

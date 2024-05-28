@@ -13,4 +13,8 @@ public class TipoUva {
         }
         return false;
     }
+
+    public String toString() {
+        return "TipoUva{" + "nombre=" + nombre + ", descripcion=" + descripcion + '}';
+    }
 }

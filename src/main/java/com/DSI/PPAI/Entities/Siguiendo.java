@@ -3,7 +3,6 @@ package com.DSI.PPAI.Entities;
 import lombok.Data;
 
 import java.util.Date;
-import java.util.List;
 
 @Data
 public class Siguiendo {
@@ -11,16 +10,17 @@ public class Siguiendo {
     private Date fechaInicio;
     private Bodega bodega;
     private Enofilo enofilo;
+    private Sommelier somelier;
 
-    public Void sosDeAmigo(){
-        return null;
+    public boolean sosDeAmigo(){
+        return enofilo != null;
     }
 
-    public Void sosDeBodega(){
-        return null;
+    public boolean sosDeBodega(){
+        return bodega != null;
     }
 
-    public Void sosDeSomelier(){
-        return null;
+    public boolean sosDeSomelier(){
+        return somelier != null;
     }
 }
